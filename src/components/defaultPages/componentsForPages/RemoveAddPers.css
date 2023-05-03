@@ -1,0 +1,17 @@
+.removeAddPers{
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgb(0, 0, 0, .25);
+    width: 180px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.removeAddPers i{
+    float: right;
+    font-size: 1.5rem;
+}
+
+
+.removeAddPers b{
+    float: left;
+}

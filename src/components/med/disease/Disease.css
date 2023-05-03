@@ -1,0 +1,50 @@
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+.buttons button{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: #01959a;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.buttons button:hover{
+    background-color: #10868a;
+}
+
+.save{
+    background: #6cd18a;
+    color: #0c421c;
+    border: none;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 7px;
+} 
+
+.save:hover{
+    background: #88e0a3;
+    color: #0c421c;
+} 
+
+.general{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.general h1{
+    color: #000;
+}

@@ -1,0 +1,70 @@
+.modal{
+    width: 400px;
+    height: 40vh;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 40px 30px 15px rgba(44, 43, 43, 0.05);
+}
+
+.comp{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem 3rem;
+}
+
+.comp label{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.comp input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.buttons-cls{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.buttons-cls button{
+    border: none;
+}
+
+.buttons-cls .save{
+    background: #6cd18a;
+    color: #0c421c;
+} 
+
+.buttons-cls .save:hover{
+    background: #88e0a3;
+    color: #0c421c;
+} 
+
+.remove{
+    background: #f0688a;
+    color: #470717;
+}
+
+.remove:hover{
+    background: #f77f9d;
+    color: #470717;
+}
+
+.cancel:hover{
+    background: #727070;
+}
+
+.cancel{
+    margin-left: 100px;
+}
