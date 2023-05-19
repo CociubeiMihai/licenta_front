@@ -33,7 +33,7 @@ export const Inputs = [
       placeholder: "End Time",
       label: "End Time",
       required: true,
-    }
+    },
 ]
 
 export const groups = [
@@ -59,6 +59,14 @@ export const groups = [
     options: [
       { id: "presumtiveoption1", label: " Yes", value: true },
       { id: "presumtiveoption2", label: " No", value: false },
+    ],
+  },
+  {
+    label: "Hospitalization required",
+    name: "hospitalization",
+    options: [
+      { id: "hospitalization1", label: " Yes", value: true },
+      { id: "hospitalization1", label: " No", value: false },
     ],
   },
   {

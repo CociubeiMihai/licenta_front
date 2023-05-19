@@ -118,3 +118,8 @@ form{
     margin-top: -150px;
     margin-left: 200px;
 }
+
+.drop-div{
+    display: flex;
+    flex-direction: column;
+}

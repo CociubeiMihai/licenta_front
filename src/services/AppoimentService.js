@@ -2,17 +2,28 @@ import axios from "axios";
 
 const API = "https://localhost:8080/appointment";
 
-export const saveAppoiment = (description, data, begin, end, room, personal,patient, presumtive, fever, recuring, covid) => {
-    return axios.post(API + '/save', { description: description, 
-        data: data,
-        begin: begin,
-        end: end,
-        room: room,
-        personal: personal,
-        patient: patient,
-        presumptiveDiagnosis : presumtive,
-        isFever: fever,
-        isRecurring: recuring,
-        isCovidContact: covid,
-     });
+export const saveAppoiment = (
+  values,
+  acomodationRoom,
+  personal,
+  patient,
+  idDisease,
+  operation
+) => {
+  return axios.post(API + "/save", {
+    description: values.description,
+    data: values.selectDate,
+    begin: values.startHour,
+    end: values.endHour,
+    room: acomodationRoom,
+    personal: personal,
+    patient: patient,
+    presumptiveDiagnosis: values.diagnostic,
+    isFever: values.fever,
+    isRecurring: values.recAppoint,
+    isCovidContact: values.covid,
+    idDisease: idDisease,
+    operation: operation,
+    days :values.nrDays
+  });
 };

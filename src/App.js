@@ -10,6 +10,7 @@ import EditUsers from "./admin/users/EditUsers";
 import DoctorAppoiment from "./components/med/appoiment/DoctorAppoiment";
 import FormComponent from "./components/med/appoimentForm/FormComponent";
 import Disease from "./components/med/disease/Disease";
+import Calendar from "./components/calendar/Calendar";
 
 
 function App() {
@@ -22,11 +23,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/admin/users" element={<EditUsers />} />
           <Route path="/med/appoiment" element = {<DoctorAppoiment />}/>
           <Route path="/med/form" element = {<FormComponent />}/>
           <Route path="/med/disease" element = {<Disease />}/>
+          <Route path="/calendar" element = {<Calendar />}/>
           </Routes>
       </Router>
     </div>

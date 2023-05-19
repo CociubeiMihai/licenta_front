@@ -1,14 +1,16 @@
 import { Box, InputLabel, MenuItem, Modal, Select } from "@mui/material";
 import React from "react";
 import "./Disease.css";
+import RemoveAddPers from "../../defaultPages/componentsForPages/RemoveAddPers";
+import DiseaseAddRemove from "../../defaultPages/componentsForPages/DiseaseAddRemove";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 800,
-  height: 400,
+  width: 900,
+  height: 550,
   bgcolor: "background.paper",
   border: "2px solid #000",
   background: "#fff",
@@ -27,7 +29,7 @@ function IncompatibilityModal(props) {
       <Box sx={style}>
         <div className="general">
           <h1>{props.dictionary.label}</h1>
-          <InputLabel id="select-types">Disease type</InputLabel>
+          <InputLabel id="select-types">Your main class</InputLabel>
           <Select
             labelId="select-types"
             id="select-types"
@@ -35,17 +37,48 @@ function IncompatibilityModal(props) {
             label="Type"
             onChange={props.handleDropdownChange}
           >
-            {props.items.map((line,index) => (
-              <MenuItem key={index} value={line.id}>{line.name}</MenuItem>
+            {props.items.map((line, index) => (
+              <MenuItem key={index} value={line.id}>
+                {line.name}
+              </MenuItem>
             ))}
           </Select>
-          <button className="save" onClick={props.onSave}>
+          <div className="components">
+            <div className="sub-comp">
+              <label>Unchosen</label>
+              <div>
+                {props.items.map((line, index) => (
+                  <DiseaseAddRemove
+                    key={index}
+                    data={line}
+                    plus={true}
+                    onClick={() => props.handleClikIncompatibility(line, true)}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="sub-comp">
+              <label>Current selection</label>
+              <div >
+                {props.selected.map((line, index) => (
+                  <DiseaseAddRemove
+                    key={index}
+                    data={line}
+                    plus={false}
+                    onClick={() => props.handleClikIncompatibility(line, false)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <button className="save" style={{marginTop: "9%"}} onClick={props.onSave}>
             Save
           </button>
         </div>
       </Box>
     </Modal>
-  )
+  );
 }
 
-export default IncompatibilityModal
+export default IncompatibilityModal;

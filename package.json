@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.6",
     "dayjs": "^1.11.7",
+    "googleapis": "^118.0.0",
     "install": "^0.13.0",
     "npm": "^9.5.0",
     "react": "^18.2.0",

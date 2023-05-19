@@ -35,7 +35,7 @@ function CategoryModal(props) {
             value={props.dictionary.value}
             onChange={props.changeValue}
           />
-          <button className="save" onClick={props.onSave}>
+          <button className="save"style={{marginTop: "9%"}} onClick={props.onSave}>
             Save
           </button>
         </div>

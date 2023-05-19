@@ -47,7 +47,7 @@ function InsertDiseaseModal(props) {
               <MenuItem key={index} value={line.id}>{line.name}</MenuItem>
             ))}
           </Select>
-          <button className="save" onClick={props.onSave}>
+          <button className="save" style={{marginTop: "5%"}} onClick={props.onSave}>
             Save
           </button>
         </div>

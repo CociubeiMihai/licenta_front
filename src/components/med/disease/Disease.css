@@ -1,4 +1,3 @@
-
 .buttons{
     display: flex;
     gap: 10px;
@@ -43,8 +42,36 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 }
 
 .general h1{
     color: #000;
+    margin-top: -60px;
 }
+
+.components{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+}
+
+.sub-comp{
+    width: 50%;
+    height: 190px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.table{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.table-comp{
+    width: 50%;
+}
+

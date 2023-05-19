@@ -13,11 +13,14 @@ export const FormProvider = ({ children }) => {
     presumtive: "",
     covid: "",
     diagnostic: "",
+    nrDays:""
   });
   const [patient, setPatient] = useState([]);
   const [isPatient, setIsPatient] = useState(false);
   const [staf, setStaf] = useState([]);
   const [isStaff, setIsStaff] = useState(false);
+  const [idDisease,setIdDisease] = useState("")
+  const [acomodationId,setAcomodationId] = useState("")
 
   return (
     <FormContext.Provider
@@ -32,6 +35,10 @@ export const FormProvider = ({ children }) => {
         setStaf,
         isStaff,
         setIsStaff,
+        idDisease,
+        setIdDisease,
+        acomodationId,
+        setAcomodationId
       }}
     >
       {children}
