@@ -1,9 +1,9 @@
-import { useState, createContext } from "react";
+import React, { useState, createContext } from "react";
 
 const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
-  const [values, setValues] = useState({
+  const initialValues = {
     description: "",
     endHour: "",
     selectDate: "",
@@ -13,14 +13,34 @@ export const FormProvider = ({ children }) => {
     presumtive: "",
     covid: "",
     diagnostic: "",
-    nrDays:""
-  });
+    nrDays: "",
+    minor: "",
+    isFmale: "",
+  };
+
+  const [values, setValues] = useState(initialValues);
   const [patient, setPatient] = useState([]);
   const [isPatient, setIsPatient] = useState(false);
   const [staf, setStaf] = useState([]);
   const [isStaff, setIsStaff] = useState(false);
-  const [idDisease,setIdDisease] = useState("")
-  const [acomodationId,setAcomodationId] = useState("")
+  const [idDisease, setIdDisease] = useState("");
+  const [acomodationId, setAcomodationId] = useState("");
+  const [atiId,setAtiId] = useState("")
+  const [operationRoom, setOperationRoom] = useState("")
+  const [vehicle, setVehicle] = useState("")
+
+  const resetValues = () => {
+    setValues(initialValues);
+    setPatient([]);
+    setIsPatient(false);
+    setStaf([]);
+    setIsStaff(false);
+    setIdDisease("");
+    setAcomodationId("");
+    setAtiId("")
+    setOperationRoom("")
+    setVehicle("")
+  };
 
   return (
     <FormContext.Provider
@@ -38,7 +58,14 @@ export const FormProvider = ({ children }) => {
         idDisease,
         setIdDisease,
         acomodationId,
-        setAcomodationId
+        setAcomodationId,
+        resetValues,
+        atiId,
+        setAtiId,
+        operationRoom,
+        setOperationRoom,
+        setVehicle,
+        vehicle,
       }}
     >
       {children}

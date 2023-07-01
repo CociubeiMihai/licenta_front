@@ -29,27 +29,14 @@ function EditUsersModal(props) {
       { props.open ?
         <Box sx={style}>
             <div className="comp">
-              <label>Name</label>
-              <input
-                value={props.userData.name}
-                onChange={(e) => props.setData({...props.userData,"name": e.target.value})}
-              />
+
               <label>Email</label>
               <input
                 value={props.userData.email}
-                onChange={(e) => props.setData({...props.userData,"email": e.target.value})}
+                
               />
-              <label>Title</label>
-              <input
-                value={props.userData.title}
-                onChange={(e) => props.setData({...props.userData,"title": e.target.value})}
-              />
-              <label>Description</label>
-              <input
-              value={props.userData.description}
-              onChange={(e) => props.setData({...props.userData,"description": e.target.value})}
-              />
-              <label>Role</label>
+
+              <label>Rol</label>
               <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -65,9 +52,9 @@ function EditUsersModal(props) {
               </Select>   
             </div>
             <div className="buttons-cls">
-                  <button className="remove" onClick={()=> props.onRemove()} >Remove</button>
-                  <button className="save" onClick={()=> props.onSave()}>Save</button>
-                  <button className="cancel" onClick={() => props.close()}>Cancel</button>
+                  <button className="remove" onClick={()=> props.onRemove()} >Șterge</button>
+                  <button className="saveCls" onClick={()=> props.onSave()}>Salvează</button>
+                  <button className="cancel" onClick={() => props.close()}>Renunță</button>
               </div> 
         </Box>
       :<div></div>}

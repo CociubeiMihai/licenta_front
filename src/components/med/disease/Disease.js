@@ -17,32 +17,32 @@ import TableComponent from "../../defaultPages/componentsForPages/Table";
 import { MenuItem, Select } from "@mui/material";
 
 const columnsTable = [
-  { id: "description", label: "Disease", minWidth: 170 },
-  { id: "category", label: "Category", minWidth: 170 },
+  { id: "description", label: "Boală", minWidth: 170 },
+  { id: "category", label: "Clasă de boli", minWidth: 170 },
 ];
 
 const columnsTableClasses = [
-  { id: "name", label: "Incompatible width", minWidth: 170 }
+  { id: "name", label: "Incompatibil cu", minWidth: 170 }
 ];
 
 function Disease() {
   const [insertDict, setInsertDict] = useState({
     open: false,
     value: "",
-    placeholder: "Type the new disease",
-    label: "Insert new disease",
+    placeholder: "Definește boala",
+    label: "Creează o nouă boală",
   });
   const [typedict, setTypeDict] = useState({
     open: false,
     value: "",
-    placeholder: "Type a new category",
-    label: "Insert new category",
+    placeholder: "Definește categoria",
+    label: "Adaugă o nouă categorie",
   });
   const [incompatibilityDict, setIncompatibilityDict] = useState({
     open: false,
     value: [],
     id: "",
-    label: "Incompatibility classes",
+    label: "Clasele de incompatibilități",
   });
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState("");
@@ -141,10 +141,10 @@ function Disease() {
         </div>
         </div>
         <div className="buttons">
-          <button onClick={handleOpenCategoryModal}>Create category</button>
-          <button onClick={handleOpen}>Insert disease</button>
+          <button onClick={handleOpenCategoryModal}>Crează o clasă de boli</button>
+          <button onClick={handleOpen}>Adaugă boală</button>
           <button onClick={handleOpenIncompatibility}>
-            Create incompatibility cases
+            Gestionează incompatibilitățile dintre clase
           </button>
         </div>
       </div>

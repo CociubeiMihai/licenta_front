@@ -35,3 +35,22 @@ export const Roles = [
         icon: "fa-solid fa-user-nurse"
     }
 ]
+
+export const RoomTypes = [
+    {
+        name: "Cazare",
+        capsName: "CAZARE",
+    },
+    {
+        name: "Cazare copii",
+        capsName: "CAZARE_COPII",
+    },
+    {
+        name: "ATI",
+        capsName: "ATI",
+    },
+    {
+        name: "Interventie",
+        capsName: "OPERATIE",
+    },
+]

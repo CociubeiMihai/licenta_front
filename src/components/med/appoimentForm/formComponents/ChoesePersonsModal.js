@@ -79,7 +79,7 @@ function ChoesePersonsModal(props) {
           {props.role ? (
             <div className="antet">
             <FormControl className="dropdown">
-              <InputLabel id="label">Role</InputLabel>
+              <InputLabel id="label">Rol</InputLabel>
               <Select
                 labelId="label"
                 id="demo-simple-select"
@@ -103,7 +103,7 @@ function ChoesePersonsModal(props) {
                 })}
               </Select>
             </FormControl>
-            <div className="dropdown"><h2>Your current selection</h2></div>
+            <div className="dropdown"><h2>Selecția curentă</h2></div>
             
             </div>
           ) : (

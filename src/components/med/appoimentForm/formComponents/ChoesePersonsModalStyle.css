@@ -50,3 +50,45 @@
 .buttons-div button:hover{
     background-color: #10868a;
 }
+
+.button-div-chosen button{
+    border: none;
+    background-color: #8a8710;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    width: 100%;
+}
+.button-div-chosen {
+    height: 100%;
+    width: 100%;
+    padding: none;
+}
+
+.card{
+    border: 5px solid #8a8710;
+}
+
+.button-div {
+    height: 100%;
+    width: 100%;
+    padding: none;
+}
+
+.button-div button{
+    width: 100%;
+    
+    border: none;
+    background-color: #01959a;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+}

@@ -20,13 +20,15 @@ function LoginRegisterComponent(props) {
         onFocus={() =>
           inputProps.name === "confirmPassword" && setFocused(true)
         }
-        focused={focused.toString()}
+        focused={(focused && !props.reset).toString()}
         errorr = {(props.error && alt === true).toString()}
       />
-      {
-        alt ? <span>{props.error ? props.errorMessageAlt : errorMessage}</span> : 
-        <span>{errorMessage}</span>
+      { 
+        !props.reset && <>
+        {alt ? <span>{props.error ? props.errorMessageAlt : errorMessage}</span> : 
+        <span>{errorMessage}</span>}</>
       }
+      
     </div>
 
   );

@@ -29,7 +29,7 @@ function IncompatibilityModal(props) {
       <Box sx={style}>
         <div className="general">
           <h1>{props.dictionary.label}</h1>
-          <InputLabel id="select-types">Your main class</InputLabel>
+          <InputLabel id="select-types">Clasa principală</InputLabel>
           <Select
             labelId="select-types"
             id="select-types"
@@ -45,7 +45,7 @@ function IncompatibilityModal(props) {
           </Select>
           <div className="components">
             <div className="sub-comp">
-              <label>Unchosen</label>
+              <label>Disponibile</label>
               <div>
                 {props.items.map((line, index) => (
                   <DiseaseAddRemove
@@ -58,7 +58,7 @@ function IncompatibilityModal(props) {
               </div>
             </div>
             <div className="sub-comp">
-              <label>Current selection</label>
+              <label>Selecția curentă</label>
               <div >
                 {props.selected.map((line, index) => (
                   <DiseaseAddRemove
@@ -73,7 +73,7 @@ function IncompatibilityModal(props) {
           </div>
 
           <button className="save" style={{marginTop: "9%"}} onClick={props.onSave}>
-            Save
+            Salvează
           </button>
         </div>
       </Box>

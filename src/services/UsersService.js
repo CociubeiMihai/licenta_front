@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = "https://localhost:8080";
+export const API = "https://localhost:8080";
 
 export const allUsers = () => {
   return axios.get("https://localhost:8080/admin/users/all");
@@ -36,3 +36,12 @@ export const findDisponibleUsersByRole = (appoiment, role) => {
     t2: appoiment.endHour,
   });
 };
+
+export const contactUs = (name, email, subject, mesaj) => {
+  return axios.post(API + "/person/contact", {
+    name: name,
+    email: email,
+    subject: subject,
+    mesaj: mesaj,
+  });
+}

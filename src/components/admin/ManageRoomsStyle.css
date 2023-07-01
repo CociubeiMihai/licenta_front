@@ -1,0 +1,30 @@
+.main{
+    margin-top: 150px;
+}
+
+.selectGroup{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5%;
+    align-items: flex-start;
+}
+
+.selectGroup label{
+    font-size: 20px;
+}
+
+.rooms-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.7rem;
+    padding: 2rem;
+}
+
+.rooms-div i{
+    font-size: 80px;
+}
+
+.rooms-div i:hover{
+    color: #01959a;
+}

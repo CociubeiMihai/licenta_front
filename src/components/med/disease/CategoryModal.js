@@ -36,7 +36,7 @@ function CategoryModal(props) {
             onChange={props.changeValue}
           />
           <button className="save"style={{marginTop: "9%"}} onClick={props.onSave}>
-            Save
+            Salvează
           </button>
         </div>
       </Box>

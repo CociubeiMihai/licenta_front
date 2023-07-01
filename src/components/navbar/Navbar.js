@@ -1,19 +1,38 @@
 import "./NavbarStyles.css";
-import { MenuItems } from "./MenuItems";
-import React, {useState} from 'react'
+import { MenuItems, MenuItemsAdmin, MenuItemsDefault, MenuItemsMed } from "./MenuItems";
+import React, {useEffect, useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
     const [clicked, setClicked] = useState(false);
     let navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem('user'));
+    const [items, setItems] = useState([]);
+    const [login, setLogin] = useState(false)
+    useEffect(() => {
+      if(user === ""){
+      setItems(MenuItemsDefault)
+      setLogin(true)
+      }
+      else
+      if(user.role.name === 'PATIENT')
+        setItems(MenuItems);
+      else if(user.role.name === 'ADMIN'){
+        setItems(MenuItemsAdmin)
+      }
+      else{
+        setItems(MenuItemsMed)
+      }
+
+    }, []); // Empty dependency array to run the effect only once
 
   const handleClick = () => {
     setClicked(!clicked)
   }
 
   const singUpHandle = () => {
-    navigate("signup")
+    navigate("/signup")
   }
 
   return (
@@ -25,7 +44,7 @@ function Navbar() {
         </div>
 
         <ul className= { clicked ? "nav-menu active" : "nav-menu"} >
-            {MenuItems.map((item, index) => {
+            {items.map((item, index) => {
                 return (
                 <li key={index}>
                     <a className= {item.cName} href= {item.url}>
@@ -35,7 +54,7 @@ function Navbar() {
                 </li>
                 )
             })}
-            <button onClick={singUpHandle}>Sign Up</button>
+            <button onClick={singUpHandle}>{login ? "Sign Up" : "Deconectează-te"}</button>
         </ul>
     </nav>
   )

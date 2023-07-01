@@ -1,33 +1,6 @@
-.modal{
-    width: 400px;
-    height: 40vh;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 40px 30px 15px rgba(44, 43, 43, 0.05);
-}
-
-.comp{
+.modal-div{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 2rem 3rem;
-}
-
-.comp label{
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.comp input{
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 6px;
 }
 
 .buttons-cls{
@@ -39,6 +12,8 @@
 
 .buttons-cls button{
     border: none;
+    border-radius: 5px;
+    padding: .5rem;
 }
 
 .buttons-cls .saveCls{

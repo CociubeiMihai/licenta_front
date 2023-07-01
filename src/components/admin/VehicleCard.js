@@ -4,10 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import room from "../../../../images/room.jpg";
-import "./ChoesePersonsModalStyle.css";
 
-function RoomCard(props) {
+function VehicleCard(props) {
   return (
     <Card className= {props.chosen ? "card" : ""}  sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -24,20 +22,17 @@ function RoomCard(props) {
             component="div"
             className="titlu-card"
           >
-            {props.data.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.data.description}
+            {props.data.nume}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <div className={props.chosen ? "button-div-chosen" : "button-div"}>
-          <button onClick={() => props.submit(props.data)} > {props.modify ? "Modifica" : props.chosen ? "Camera selectata" : "Selecteaza"}</button>
+          <button onClick={() => props.submit(props.data)} >{props.modify ? "Modifica" : props.chosen ? "Camera selectata" : "Selecteaza" }  </button>
         </div>
       </CardActions>
     </Card>
   );
 }
 
-export default RoomCard;
+export default VehicleCard;

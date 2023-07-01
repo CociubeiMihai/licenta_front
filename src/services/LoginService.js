@@ -18,4 +18,12 @@ const register = (data) => {
   });
 };
 
+export const sendEmailReset = (email) => {
+  return axios.get(API+ `/person/reqEmail/${email}`);
+}
+
+export const resetPassword = (token,email,newPassword) => {
+  return axios.post(API+ `/person/changePassword`,{token:token,email:email,newPassword:newPassword});
+}
+
 export { authorize, register };

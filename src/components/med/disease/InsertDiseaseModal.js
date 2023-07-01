@@ -35,7 +35,7 @@ function InsertDiseaseModal(props) {
             value={props.dictionary.value}
             onChange={props.changeValue}
           />
-          <InputLabel id="select-types">Disease type</InputLabel>
+          <InputLabel id="select-types">Clasa din care va face parte</InputLabel>
           <Select
             labelId="select-types"
             id="select-types"
@@ -48,7 +48,7 @@ function InsertDiseaseModal(props) {
             ))}
           </Select>
           <button className="save" style={{marginTop: "5%"}} onClick={props.onSave}>
-            Save
+            Salvează
           </button>
         </div>
       </Box>

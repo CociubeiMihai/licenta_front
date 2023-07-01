@@ -7,7 +7,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import room from "../../../../images/room.jpg";
 import "./ChoesePersonsModalStyle.css";
 
-function RoomCard(props) {
+function ReqCard(props) {
   return (
     <Card className= {props.chosen ? "card" : ""}  sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -24,20 +24,33 @@ function RoomCard(props) {
             component="div"
             className="titlu-card"
           >
-            {props.data.name}
+            Patieint {props.data.appUser.firstName} 
+             {props.data.appUser.lastName !==  null && props.data.appUser.lastName}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {props.data.description}
+            Data convenabila <strong>{props.data.data}</strong> <br/>
+            Diagnosticul trecut <strong> {props.data.diagnostic} </strong> <br/>
+            Febră: 
+            <strong>
+            {props.data.febra ? "Da" : "Nu"}</strong><br/>
+            Contagios:
+            <strong>
+            {props.data.contagios ? "Da " : "Nu"}</strong>
+            <br/>
+            Boala de care sufăr
+            <strong>
+            {props.data.disease === null ? " nu este clară" : " " + props.data.disease.description}
+            </strong>
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <div className={props.chosen ? "button-div-chosen" : "button-div"}>
-          <button onClick={() => props.submit(props.data)} > {props.modify ? "Modifica" : props.chosen ? "Camera selectata" : "Selecteaza"}</button>
+        <div className= "button-div">
+          <button onClick={() => props.submit(props.data)} > Rezolvă cererea</button>
         </div>
       </CardActions>
     </Card>
   );
 }
 
-export default RoomCard;
+export default ReqCard;
