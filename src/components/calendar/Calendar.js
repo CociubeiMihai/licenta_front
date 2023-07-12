@@ -43,6 +43,8 @@ import {
 } from "@mui/material";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaBed } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const currentDate = new Date();
 
@@ -51,6 +53,7 @@ const getClassByLocation = (location) => {
   if (location === "Room 2") return classes.secondRoom;
   return classes.thirdRoom;
 };
+const user = JSON.parse(localStorage.getItem("user"));
 
 const StyledIconButton = styled(IconButton)(() => ({
   [`&.${classes.commandButton}`]: {
@@ -96,13 +99,13 @@ const Header = ({ children, appointmentData, ...restProps }) => {
     prevOpen.current = open;
   }, [open]);
 
-  const handleRemove = (id) =>{
+  const handleRemove = (id) => {
     removeAppointment(id)
-  }
-  const handleExternare = (id) =>{
-    externeaza(id)
-  }
-  console.log(appointmentData)
+  };
+  const handleExternare = (id) => {
+    externeaza(id);
+  };
+  console.log(appointmentData);
   return (
     <StyledAppointmentTooltipHeader {...restProps}>
       <StyledIconButton
@@ -142,7 +145,9 @@ const Header = ({ children, appointmentData, ...restProps }) => {
                       ></RiDeleteBin5Line>
                     </MenuItem>
                     {appointmentData.location !== null && (
-                      <MenuItem onClick={() =>  handleExternare(appointmentData.id)}>
+                      <MenuItem
+                        onClick={() => handleExternare(appointmentData.id)}
+                      >
                         Externeaza
                         <FaBed style={{ marginLeft: "5PX" }}></FaBed>
                       </MenuItem>
@@ -169,11 +174,10 @@ function Calendar() {
     },
   ]);
 
-  const user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
     findYourAppointments(user.id).then((res) => {
       setCalendarData(res.data);
-      console.log(res.data)
+      console.log(res.data);
     });
     allRooms().then((res) => {
       setResources((resources) => [
@@ -193,7 +197,12 @@ function Calendar() {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      uploadIcsFile(file, user.id);
+      uploadIcsFile(file, user.id).then((res) => {
+        findYourAppointments(user.id).then((res) => {
+          setCalendarData(res.data);
+          toast.success("Datele au fost încărcate")
+        });
+      });
     }
   };
 
@@ -201,7 +210,16 @@ function Calendar() {
     <div>
       <Navbar />
       <div className="import">
-        <input type="file" onChange={handleFileChange} />
+        <input
+          type="file"
+          onChange={handleFileChange}
+          style={{
+            border: "1px solid #ccc",
+            display: "inlineBlock",
+            padding: "6px 12px",
+            cursor: "pointer",
+          }}
+        />
       </div>
       <div className="clalendar-div">
         <Scheduler data={calendarData}>
@@ -223,6 +241,18 @@ function Calendar() {
           <Resources data={resources} />
         </Scheduler>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }

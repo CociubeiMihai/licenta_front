@@ -11,11 +11,13 @@ function Navbar() {
     const [items, setItems] = useState([]);
     const [login, setLogin] = useState(false)
     useEffect(() => {
-      if(user === ""){
+      console.log(user)
+      if(user === null){
       setItems(MenuItemsDefault)
       setLogin(true)
       }
-      else
+      else {
+        console.log("asaaws")
       if(user.role.name === 'PATIENT')
         setItems(MenuItems);
       else if(user.role.name === 'ADMIN'){
@@ -23,7 +25,7 @@ function Navbar() {
       }
       else{
         setItems(MenuItemsMed)
-      }
+      }}
 
     }, []); // Empty dependency array to run the effect only once
 

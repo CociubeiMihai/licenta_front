@@ -47,7 +47,7 @@ function Login() {
         <i className="fa-solid fa-house-user"></i>
       </a>
       <div className="center">
-        <h1>Login</h1>
+        <h1>Autentificare</h1>
         <form method="post">
           <div className="txt_field">
             <input
@@ -72,15 +72,15 @@ function Login() {
               required
               onChange={(e) => setParola(e.target.value)}
             />
-            <label>Password</label>
+            <label>Parolă</label>
           </div>
           <div className="pass" onClick={handleForgot}>
-            Forgot Password?
+            Ai uitat parola?
           </div>
-          <input type="button" value="Login" onClick={handleSubmit}></input>
+          <input type="button" value="Autentificare" onClick={handleSubmit}></input>
           <div className="signup_link">
-            Not a member?
-            <a href="/register">Singup</a>
+            Nu ai cont?
+            <a href="/register">Creează cont</a>
           </div>
         </form>
       </div>

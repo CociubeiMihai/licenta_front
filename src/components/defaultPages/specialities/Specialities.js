@@ -15,24 +15,24 @@ function Specialities() {
 
        <HomeData 
         className = "first-des"
-        heading = "Covid-19 testing"
-        text = 'If you have symptoms, test immediately. If you were exposed to COVID-19 and do not have symptoms, wait at least 5 full days after your exposure before testing. If you test too early, you may be more likely to get an inaccurate result. If you are in certain high-risk settings, you may need to test as part of a screening testing program. Consider testing before contact with someone at high risk for severe COVID-19, especially if you are in an area with a medium or high COVID-19 Community Level.'
+        heading = "Testare Covid-19"
+        text = 'Dacă aveți simptome, faceți imediat un test. Dacă ați fost expus la COVID-19 și nu aveți simptome, așteptați cel puțin 5 zile întregi de la expunere înainte de a face testul. Dacă faceți testul prea devreme, este posibil să aveți mai multe șanse să obțineți un rezultat inexact. Dacă vă aflați în anumite medii cu risc ridicat, este posibil să trebuiască să vă testați ca parte a unui program de testare de screening. Luați în considerare testarea înainte de a intra în contact cu o persoană cu risc ridicat de COVID-19 sever, în special dacă vă aflați într-o zonă cu un nivel comunitar mediu sau ridicat de COVID-19.'
         img1 = {tube}
         img2 = {img1}
        />
 
        <HomeData 
         className = "first-des-reverse"
-        heading = "You come first"
-        text = 'At Our Clinic, the approach to treatment is centered around the individual, placing emphasis on personal care before anything else. It is a truly human experience. Count on our experts to deliver an accurate diagnosis and the right plan for you the first time.'
+        heading = "Tu ești pe primul loc"
+        text = 'La Clinica noastră, abordarea tratamentului este centrată pe individ, punând accentul pe îngrijirea personală înainte de orice altceva. Este o experiență cu adevărat umană. Contați pe experții noștri pentru a vă oferi un diagnostic precis și un plan potrivit pentru dumneavoastră de prima dată.'
         img1 = {img2}
         img2 = {img3}
        />
 
        <HomeData
         className = "first-des"
-        heading = "More experience"
-        text = "The million patients we treat each year prepares us to treat the one who matters most — you. All of our patient care, education and research are driven to make discoveries that can help heal you."
+        heading = "Mai multă experiență"
+        text = "Milioanele de pacienți pe care îi tratăm în fiecare an ne pregătesc pentru a-i trata pe cei care contează cel mai mult - pe dumneavoastră. Toate activitățile noastre de îngrijire a pacienților, educație și cercetare sunt orientate spre descoperiri care vă pot ajuta să vă vindecați."
         img1 = {surgery}
         img2 = {img4}
        />

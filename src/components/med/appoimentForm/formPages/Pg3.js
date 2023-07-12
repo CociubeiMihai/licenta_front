@@ -49,7 +49,8 @@ function Pg3(props) {
       formContext.idDisease,
       selected,
       formContext.vehicle,
-      formContext.atiId
+      formContext.atiId,
+      formContext.values.isFmale
     ).then((res) => {});
     formContext.resetValues();
     action();

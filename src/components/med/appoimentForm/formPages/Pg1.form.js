@@ -49,45 +49,11 @@ function Pg1(props) {
   }, [formContext.values, formContext.idDisease, formContext.isPatient]);
 
   const onChange = (e) => {
-    if (selectedID !== "") {
-      if (e.target.name === "selectDate" && values.nrDays !== "") {
-        findDisponibleRoomsByDisease(
-          e.target.value,
-          values.nrDays,
-          selectedID
-        ).then((r) => {
-          if (r.data.length === 0) {
-            alert("Nu il putem caza");
-            setValues({ ...values, availableAcomodation: false });
-          } else {
-            console.log("aici");
-            setValues({
-              ...values,
-              [e.target.name]: e.target.value,
-              availableAcomodation: true,
-            });
-          }
-        });
-      }
-      if (e.target.name === "nrDays" && values.selectDate !== "" && values.minor != true)
-        findDisponibleRoomsByDisease(
-          values.selectDate,
-          e.target.value,
-          selectedID
-        ).then((r) => {
-          if (r.data.length === 0) {
-            alert("Nu il putem caza");
-            setValues({ ...values, availableAcomodation: false });
-          } else {
-            setValues({
-              ...values,
-              [e.target.name]: e.target.value,
-              availableAcomodation: true,
-            });
-          }
-        });
-    }
-    setValues({ ...values, [e.target.name]: e.target.value });
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+      availableAcomodation: true,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -154,12 +120,13 @@ function Pg1(props) {
   };
   const handleAddUser = (e) => {
     setPatient(e);
+    setValues({ ...values, minor: e.age < 18 });
     handleClose();
   };
   const handleClose = () => setPatientModal(false);
   return (
     <div className="principal-div-pag1">
-      <h1>Crează programarea</h1>
+      <h1>Creează programarea</h1>
       <div className="appoiment-form">
         <form onSubmit={handleSubmit}>
           <div className="team-form">
@@ -236,7 +203,7 @@ function Pg1(props) {
               onChange={(value) => handleOptionChange(group.name, value)}
             />
           ))}
-             {values["minor"] && (
+             {((values["minor"] || patient.age < 18) && values["hospitalization"]) && (
             <RadioGroup
               key={parinte.name}
               label={parinte.label}
@@ -255,7 +222,7 @@ function Pg1(props) {
         handleAdd={handleAddUser}
         role={false}
       />
-            <ToastContainer
+      <ToastContainer
         position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}

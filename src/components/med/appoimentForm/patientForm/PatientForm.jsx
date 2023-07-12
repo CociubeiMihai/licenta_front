@@ -92,7 +92,7 @@ function PatientForm() {
       >
         <div className="form-pages">
           <div className="principal-div-pag1">
-            <h1>Crează o cerere</h1>
+            <h1>Creează o cerere</h1>
             <div className="appoiment-form">
               <form onSubmit={handleSubmit}>
                 {InputsPatient.map((input) => (

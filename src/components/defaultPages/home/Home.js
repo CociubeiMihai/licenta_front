@@ -10,7 +10,7 @@ function Home() {
   const [defaultUser, setDefaultUser] = useState(false)
   const [neLog, setNeLog] = useState(false)
   useEffect(() => {
-    if(user === "" )
+    if(user === null || user === "" )
       setNeLog(true)
     else if(user.role.name === 'PATIENT'){
       setDefaultUser(true)
@@ -23,7 +23,7 @@ function Home() {
         <Hero 
         cName = "hero"
         imagHero = {heroImg}
-        title = "Your Life. Our speciality"
+        title = "Viața ta. Specialitatea noastră"
         text = "Alege cea mai bună echipă"
         buttonText = "Contactează-ne"
         url = "/contact"
@@ -34,7 +34,7 @@ function Home() {
         <Hero 
         cName = "hero"
         imagHero = {heroImg}
-        title = "Your Life. Our speciality"
+        title = "Viața ta. Specialitatea noastră"
         text = "Alege cea mai bună echipă"
         buttonText = "Prima programare"
         url = "/patient/appointment"
@@ -44,7 +44,7 @@ function Home() {
         <Hero 
         cName = "hero"
         imagHero = {heroImg}
-        title = "Your Life. Our speciality"
+        title = "Viața ta. Specialitatea noastră"
         text = "Alege cea mai bună echipă"
         buttonText = "Prima programare"
         url = "/"

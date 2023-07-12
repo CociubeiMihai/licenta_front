@@ -16,6 +16,7 @@ function Pg4(props) {
   console.log(formContext.values.isFmale);
   useEffect(() => {
     setSelected(formContext.acomodationId);
+    console.log(formContext.values.minor)
     if (formContext.values.minor) {
       findDisponibleRoomsByDiseaseAndGen(
         formContext.values.selectDate,

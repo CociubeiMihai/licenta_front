@@ -11,6 +11,7 @@ export const saveAppoiment = (
   operation,
   vehicleId,
   atiRoom,
+  isFmale
 ) => {
   return axios.post(API + "/save", {
     description: values.description,
@@ -29,6 +30,7 @@ export const saveAppoiment = (
     days: values.nrDays,
     vehicleId: vehicleId,
     atiRoom: atiRoom,
+    genFeminin: isFmale
   });
 };
 

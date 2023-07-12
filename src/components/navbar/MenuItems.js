@@ -50,7 +50,7 @@ export const MenuItems = [
         icon : "fa-solid fa-address-book"
     },
     {
-        title : "Crează cerere",
+        title : "Creează cerere",
         url : "/patient/appointment",
         cName : "nav-links",
         icon : "fa-solid fa-book"
@@ -82,7 +82,7 @@ export const MenuItemsMed = [
         icon : "fa-solid fa-calendar"
     },
     {
-        title : "Crează programare",
+        title : "Creează programare",
         url : "/med/form",
         cName : "nav-links",
         icon : "fa-solid fa-address-book"
